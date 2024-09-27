@@ -23,8 +23,14 @@ type Author{
 # to specify entry point and return some types of those entry points
 type Query{
     reviews:[Review],
+    # for single review
+    review(id:ID!):Review,
+
     games: [Game],
-    author: [Author]
+    game(id:ID!):Game,
+    
+    authors: [Author]
+    author(id:ID!):Author,
 }
 
 `
