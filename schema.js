@@ -42,12 +42,17 @@ type Query{
 type Mutation{
     deleteGame(id: ID!):[Game]
     addGame(game: AddGameInput!): Game
+    updateGame(id: ID!, edits:EditGameInput!): Game
 }
 
 #for making mutation in single argument
 input AddGameInput{
     title: String!,
     platform: [String!]!
+}
+input EditGameInput{
+    title: String,
+    platform: [String!]
 }
 
 `
