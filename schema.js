@@ -38,4 +38,16 @@ type Query{
     author(id:ID!):Author,
 }
 
+# for mutating data
+type Mutation{
+    deleteGame(id: ID!):[Game]
+    addGame(game: AddGameInput!): Game
+}
+
+#for making mutation in single argument
+input AddGameInput{
+    title: String!,
+    platform: [String!]!
+}
+
 `
